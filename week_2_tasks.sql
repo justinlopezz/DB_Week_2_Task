@@ -79,5 +79,27 @@ insert into PlayerRegistration (DateRegistered, PlayerID, ClubName, Year, Season
 , ('19/FEB/2019', 102589705, 'Diamond Valley Eagles', 2018, 'Winter', 'U19', 3)
 , ('15/MAR/2018', 10004, 'Whittelsea Pacers', 2018, 'Summer', 'U21', 4);
 
-Select
-From
+Select pr.PlayerID, p.Fname, p.Lname, p.Phone, pr.ClubName, c.ContactName, pr.Year, pr.SeasonName, pr.AgeGroup, pr.TeamNumber
+
+From  PlayerRegistration pr
+
+inner join Player p 
+on pr.PlayerID = p.PlayerID
+
+inner join Club c 
+on  pr.ClubName = c.ClubName
+
+order by PlayerID asc
+
+select Year, AgeGroup, Count(AgeGroup) as "Number of players"
+from TeamEntry 
+
+group by Year, AgeGroup
+order by Year, AgeGroup desc
+
+Select *
+
+From (Select *
+        From PlayerRegistration
+        Where SeasonName = 'Summer') sub
+where SeasonName = 'Summer'
