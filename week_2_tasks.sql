@@ -78,3 +78,6 @@ insert into PlayerRegistration (DateRegistered, PlayerID, ClubName, Year, Season
 , ('13/JAN/2018', 10002, 'Mt Martha Basketball Club', 2018, 'Summer', 'U14', 1)
 , ('19/FEB/2019', 102589705, 'Diamond Valley Eagles', 2018, 'Winter', 'U19', 3)
 , ('15/MAR/2018', 10004, 'Whittelsea Pacers', 2018, 'Summer', 'U21', 4);
+
+Select
+From
